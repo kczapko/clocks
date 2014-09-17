@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <title>AAA</title>
+  <style>
+    /* corners */
+    @keyframes cornerOne {
+      0%, 25%, 100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) rotateX(0deg);
+      }
+      50%, 75% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) rotateX(-180deg);  
+      }
+    }
+    @keyframes cornerTwo {
+      0%, 100% {
+        transform: translateX(50%) translateY(-50%) translateZ(0) rotateY(0deg) rotateX(0deg);
+      }
+      25% {
+        transform: translateX(50%) translateY(-50%) translateZ(0) rotateY(-180deg) rotateX(0deg);  
+      }
+      50% {
+        transform: translateX(50%) translateY(-50%) translateZ(0) rotateY(-180deg) rotateX(-180deg);  
+      }
+      75% {
+        transform: translateX(50%) translateY(-50%) translateZ(0) rotateY(0deg) rotateX(-180deg);   
+      }
+    }
+    @keyframes cornerThree {
+      0%, 75%, 100% {
+        transform: translateX(50%) translateY(50%) translateZ(0) rotateY(0deg);
+      }
+      25%, 50% {
+        transform: translateX(50%) translateY(50%) translateZ(0) rotateY(-180deg);
+      }
+    }
+
+    @keyframes cornerOneBackground {
+      0% {
+        background: #302f4d;
+      }
+      25% {
+        background: #0e6aa9;
+      }
+      37.5% {
+        background: #2999d5;
+      }
+      50% {
+        background: #27c4f3;
+      }
+      87.5% {
+        background: #302f4d;
+      }
+    }
+
+    @keyframes cornerTwoBackground {
+      0% {
+        background: #302f4d;
+      }
+      12.5% {
+        background: #0e6aa9;
+      }
+      37.5% {
+        background: #2999d5;
+      }
+      62.5% {
+        background: #27c4f3;
+      }
+      87.5% {
+        background: #302f4d;
+      }
+    }
+
+    @keyframes cornerThreeBackground {
+      0% {
+        background: #302f4d;
+      }
+      12.5% {
+        background: #0e6aa9;
+      }
+      75% {
+        background: #302f4d; 
+      }
+    }
+        
+    #loader { width: 4em; height: 4em; position: relative; margin: 0 auto; }
+    #loader .corner { width: 50%; height: 50%; position: absolute; left: 25%; top: 25%; background: #302f4d; }
+    #loader .corner:nth-child(1) { transform: translateX(-50%) translateY(-50%) translateZ(0); transform-origin: 100% 100%; border-radius: 100% 0 0 0; z-index: 2; }
+    #loader .corner:nth-child(2) { transform: translateX(50%) translateY(-50%) translateZ(0); transform-origin: 0 100%; border-radius: 0 100% 0 0; z-index: 4; }
+    #loader .corner:nth-child(3) { transform: translateX(50%) translateY(50%) translateZ(0); transform-origin: 0 0; border-radius: 0 0 100% 0; z-index: 3; }
+    #loader .corner:nth-child(4) { transform: translateX(-50%) translateY(50%) translateZ(0); transform-origin: 100% 0; border-radius: 0 0 0 100%; z-index: 1; }
+    #loader .corner:nth-child(1) { animation: cornerOne 2s infinite linear, cornerOneBackground 2s steps(1) infinite; }
+    #loader .corner:nth-child(2) { animation: cornerTwo 2s infinite linear, cornerTwoBackground 2s steps(1) infinite; }
+    #loader .corner:nth-child(3) { animation: cornerThree 2s infinite linear, cornerThreeBackground 2s steps(1) infinite; }
+  </style>
+</head>
+<body>
+  
+  <div id="loader">
+    <div class="corner"></div>
+    <div class="corner"></div>
+    <div class="corner"></div>
+    <div class="corner"></div>
+  </div>
+
+</body>
+</html>
