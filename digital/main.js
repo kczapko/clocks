@@ -39,7 +39,7 @@ $(function() {
 
             var 
                 now = moment(),
-                to = moment([2020, 11, 8, 0, 0, 0, 0]),
+                to = moment([2080, 11, 8, 0, 0, 0, 0]),
                 diff = moment.duration(to - now),
                 clock = now.format('HHmmss'),
                 counter = {
